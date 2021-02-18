@@ -18,6 +18,8 @@ public class HomeActivity extends MainActivity implements View.OnClickListener {
         setContentView(R.layout.activity_home);
         setTitle("Acceuil");
 
+        findViewById(R.id.buttonZone1).setOnClickListener(this);
+        findViewById(R.id.buttonZone2).setOnClickListener(this);
         }
 
     @Override

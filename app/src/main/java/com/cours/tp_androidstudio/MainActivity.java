@@ -7,12 +7,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    public void setTitle(String title){
+        TextView textView=findViewById(R.id.textViewTitle);
+        if(textView !=null)
+            textView.setText(title);
     }
 
     public void showBack(){
@@ -27,5 +34,9 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        }
+    }
+    @Override
+    public void finish() {
+        super.finish();
+    }
 }

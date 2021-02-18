@@ -16,6 +16,16 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="5dp"
             android:src="@drawable/retour"/>
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="EPSI"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"/>
 
     </RelativeLayout>
 

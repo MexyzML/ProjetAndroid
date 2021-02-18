@@ -11,4 +11,19 @@
         android:layout_height="wrap_content"
         layout="@layout/layout_header"/>
 
+    <Button
+        android:id="@+id/buttonZone1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:text="Zone1" />
+
+    <Button
+        android:id="@+id/buttonZone2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="Zone2" />
 </LinearLayout>
