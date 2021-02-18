@@ -25,6 +25,14 @@ public class HomeActivity extends MainActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+        switch (v.getId()) {
+            case R.id.buttonZone1:
+                GroupActivity.displayActivity(this);
+                break;
+            //case R.id.buttonEspace:
+            //  ImageActivity.displayActivity(this,urlEspace,"Espace");
+            //  break;
+        }
     }
 }
 
