@@ -14,6 +14,7 @@
         android:theme="@style/Theme.TPAndroidStudio">
         <activity android:name=".HomeActivity"/>
         <activity android:name=".GroupActivity"/>
+        <activity android:name=".StudentActivity"/>
 
         <activity android:name=".SplashActivity">
 
