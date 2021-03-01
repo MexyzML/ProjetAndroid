@@ -18,19 +18,19 @@ public class HomeActivity extends MainActivity implements View.OnClickListener {
         setContentView(R.layout.activity_home);
         setTitle("Acceuil");
 
-        findViewById(R.id.buttonZone1).setOnClickListener(this);
-        findViewById(R.id.buttonZone2).setOnClickListener(this);
+        findViewById(R.id.buttonGroupes).setOnClickListener(this);
+        findViewById(R.id.buttonCategorie).setOnClickListener(this);
         }
 
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.buttonZone1:
+            case R.id.buttonGroupes:
                 GroupActivity.displayActivity(this);
                 break;
-            //case R.id.buttonEspace:
-            //  ImageActivity.displayActivity(this,urlEspace,"Espace");
+            //case R.id.buttonCategorie:
+            //  CategorieActivity.displayActivity(this);
             //  break;
         }
     }

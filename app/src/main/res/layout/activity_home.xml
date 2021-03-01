@@ -12,7 +12,7 @@
         layout="@layout/layout_header"/>
 
     <Button
-        android:id="@+id/buttonZone1"
+        android:id="@+id/buttonGroupes"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
@@ -20,7 +20,7 @@
         android:text="Zone1" />
 
     <Button
-        android:id="@+id/buttonZone2"
+        android:id="@+id/buttonCategorie"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"

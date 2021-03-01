@@ -8,7 +8,7 @@ public class GroupActivity extends MainActivity implements View.OnClickListener 
 
 
     public static void displayActivity(HomeActivity activity) {
-        Intent intent = new Intent(activity,GroupActivity.class);
+        Intent intent = new Intent(activity, GroupActivity.class);
         activity.startActivity(intent);
     }
 
@@ -24,8 +24,15 @@ public class GroupActivity extends MainActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        StudentActivity.displayActivity(this);
+        switch (v.getId()) {
+            case R.id.buttonEtudiant1:
+                StudentActivity.displayActivity(this);
+                break;
+           // case R.id.buttonEtudiant2:
+             //   Student2Activity.displayActivity(this);
+               // break;
         }
     }
+}
 
 
