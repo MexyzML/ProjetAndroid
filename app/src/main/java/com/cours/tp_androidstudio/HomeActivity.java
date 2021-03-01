@@ -29,9 +29,9 @@ public class HomeActivity extends MainActivity implements View.OnClickListener {
             case R.id.buttonGroupes:
                 GroupActivity.displayActivity(this);
                 break;
-            //case R.id.buttonCategorie:
-            //  CategorieActivity.displayActivity(this);
-            //  break;
+            case R.id.buttonCategorie:
+                CategorieActivity.displayActivity(this);
+                break;
         }
     }
 }

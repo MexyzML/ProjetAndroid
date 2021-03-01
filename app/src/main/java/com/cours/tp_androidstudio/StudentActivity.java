@@ -7,9 +7,17 @@ import android.webkit.WebView;
 
 public class StudentActivity extends MainActivity  {
 
-    public static void displayActivity(GroupActivity groupActivity) {
-
+    public static void displayActivity(GroupActivity activity) {
+        Intent intent = new Intent(activity, StudentActivity.class);
+        activity.startActivity(intent);
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_student);
+        setTitle("Infos");
 
+
+    }
 }
