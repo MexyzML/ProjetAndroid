@@ -4,8 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+
 public class GroupActivity extends MainActivity implements View.OnClickListener {
 
+    ArrayList<Student> students;
+    StudentAdapter studentAdapter;
+    RecyclerView recyclerView;
 
     public static void displayActivity(HomeActivity activity) {
         Intent intent = new Intent(activity, GroupActivity.class);
