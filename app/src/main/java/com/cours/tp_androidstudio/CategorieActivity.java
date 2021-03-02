@@ -16,6 +16,7 @@ public class CategorieActivity extends MainActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorie);
         setTitle("Categories");
+        showBack();
 
 
     }

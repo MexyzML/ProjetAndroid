@@ -30,6 +30,7 @@ public class GroupActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
         setTitle("Infos");
+        showBack();
 
         recyclerView=findViewById(R.id.recyclerView);
 
