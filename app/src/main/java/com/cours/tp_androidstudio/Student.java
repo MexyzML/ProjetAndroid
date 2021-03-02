@@ -32,7 +32,7 @@ public class Student {
     }
 
     public String getPrenom() {
-        return avatar;
+        return prenom;
     }
 
     public void setPrenom(String prenom) {  this.prenom = prenom; }

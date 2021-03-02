@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
@@ -24,39 +26,53 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        // Create a new view, which defines the UI of the list item
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.cell_student, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Student student=students.get(position);
+        holder.getTextViewName().setText(student.getNom());
+        Picasso.get().load(student.getAvatar()).into(holder.getAvatarViewStudent());
+        holder.getLayoutCell().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             //   ImageActivity.displayActivity(activity,student.getUrl(),student.getName());
+            }
+        });
     }
-
     @Override
     public int getItemCount() {
         return students.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textViewName;
+        private final TextView textViewNom;
        // private final TextView textViewEmail;
-       // private final ImageView avatarViewStudent;
+        private final ImageView avatarViewStudent;
         private final View layoutCell;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            textViewName = view.findViewById(R.id.textViewName);
+            textViewNom = view.findViewById(R.id.textViewNom);
         //    textViewEmail = view.findViewById(R.id.textViewEmail);
-        //    avatarViewStudent =  view.findViewById(R.id.imageViewStudent);
-          layoutCell = view.findViewById(R.id.layoutCell);
+            avatarViewStudent =  view.findViewById(R.id.avatarViewStudent);
+            layoutCell = view.findViewById(R.id.layoutCell);
         }
 
         public TextView getTextViewName() {
-            return textViewName;
+            return textViewNom;
         }
-        public TextView getLayoutCell() {
-            return textViewName;
+        public View getLayoutCell() {
+            return layoutCell;
+        }
+
+        public ImageView getAvatarViewStudent() {
+            return avatarViewStudent;
         }
     }
 }
