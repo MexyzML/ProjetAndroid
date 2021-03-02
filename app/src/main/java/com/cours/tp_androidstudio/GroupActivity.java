@@ -4,12 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 
-public class GroupActivity extends MainActivity implements View.OnClickListener {
+public class GroupActivity extends MainActivity {
 
     ArrayList<Student> students;
     StudentAdapter studentAdapter;
@@ -26,21 +31,30 @@ public class GroupActivity extends MainActivity implements View.OnClickListener 
         setContentView(R.layout.activity_group);
         setTitle("Infos");
 
-        findViewById(R.id.buttonEtudiant1).setOnClickListener(this);
-        findViewById(R.id.buttonEtudiant2).setOnClickListener(this);
+        recyclerView=findViewById(R.id.recyclerView);
+
+        students = new ArrayList<>();
+        try {
+
+            JSONObject jsonObject=new JSONObject(Data.allData);
+            JSONArray jsonItems=jsonObject.getJSONArray("items");
+            for (int i=0;i<jsonItems.length();i++){
+                Student student=new Student(jsonItems.getJSONObject(i));
+                students.add(student);
+            }
+
+            studentAdapter= new StudentAdapter(this, students);
+
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(studentAdapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.buttonEtudiant1:
-                StudentActivity.displayActivity(this);
-                break;
-           // case R.id.buttonEtudiant2:
-             //   Student2Activity.displayActivity(this);
-               // break;
-        }
+
     }
-}
+
 
 

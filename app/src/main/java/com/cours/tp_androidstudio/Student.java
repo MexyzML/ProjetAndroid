@@ -15,4 +15,37 @@ public class Student {
         avatar=o.optString("avatar","");
 
     }
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setName(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return avatar;
+    }
+
+    public void setPrenom(String prenom) {  this.prenom = prenom; }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+
+
 }

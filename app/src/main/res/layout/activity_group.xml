@@ -11,19 +11,8 @@
         android:layout_height="wrap_content"
         layout="@layout/layout_header"/>
 
-    <Button
-        android:id="@+id/buttonEtudiant1"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:text="Etudiant1" />
-
-    <Button
-        android:id="@+id/buttonEtudiant2"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:text="Etudiant2" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

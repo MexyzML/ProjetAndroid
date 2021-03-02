@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class ProductsActivity extends MainActivity {
 
-    ArrayList<Product> students;
-    ProductAdapter studentAdapter;
+    ArrayList<Product> products;
+    ProductAdapter productAdapter;
     RecyclerView recyclerView;
 
     public static void displayActivity(HomeActivity activity) {
