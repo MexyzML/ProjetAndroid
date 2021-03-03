@@ -20,7 +20,7 @@ public class GroupActivity extends MainActivity {
     StudentAdapter studentAdapter;
     RecyclerView recyclerView;
 
-    public static void displayActivity(HomeActivity activity) {
+    public static void displayActivity(MainActivity activity) {
         Intent intent = new Intent(activity, GroupActivity.class);
         activity.startActivity(intent);
     }
