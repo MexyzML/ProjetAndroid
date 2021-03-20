@@ -2,7 +2,7 @@ package com.cours.tp_androidstudio;
 
 public class Data {
 
-    public static String allData="{\n" +
+    public static String allData ="{\n" +
             "  \"items\": [\n" +
             "    {\n" +
             "      \"avatar\": \"https://www.numerama.com/content/uploads/2019/05/trou-noir-espace-univers-astronomie.jpg\",\n" +

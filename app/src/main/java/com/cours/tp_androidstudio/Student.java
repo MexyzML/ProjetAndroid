@@ -10,10 +10,10 @@ public class Student {
     private String groupe;
 
     public Student(JSONObject o){
+        avatar = o.optString("avatar","");
         nom = o.optString("nom","");
         prenom = o.optString("prenom","");
         email = o.optString("email","");
-        avatar = o.optString("avatar","");
         groupe = o.optString("groupe","");
     }
     public String getAvatar() {

@@ -24,7 +24,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewNom;
-        // private final TextView textViewEmail;
+        private final TextView textViewPrenom;
+        private final TextView textViewEmail;
+        private final TextView textViewGroupe;
         private final ImageView avatarViewStudent;
         private final View layoutCell;
 
@@ -32,21 +34,25 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             super(view);
             // Define click listener for the ViewHolder's View
             textViewNom = view.findViewById(R.id.textViewNom);
-            //    textViewEmail = view.findViewById(R.id.textViewEmail);
+            textViewEmail = view.findViewById(R.id.textViewEmail);
+            textViewPrenom = view.findViewById(R.id.textViewPrenom);
             avatarViewStudent =  view.findViewById(R.id.avatarViewStudent);
+            textViewGroupe = view.findViewById(R.id.textViewGroupe);
             layoutCell = view.findViewById(R.id.layoutCell);
         }
 
-        public TextView getTextViewName() {
-            return textViewNom;
-        }
+        public TextView getTextViewNom() { return textViewNom; }
         public View getLayoutCell() {
             return layoutCell;
         }
+        public TextView getTextViewPrenom() { return textViewPrenom; }
+        public TextView getTextViewEmail() { return textViewEmail; }
+        public TextView getTextViewGroupe() { return textViewGroupe; }
 
         public ImageView getAvatarViewStudent() {
             return avatarViewStudent;
         }
+
     }
 
 
@@ -61,7 +67,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Student student=students.get(position);
-        holder.getTextViewName().setText(student.getNom());
+        holder.getTextViewNom().setText(student.getNom());
+        holder.getTextViewPrenom().setText(student.getPrenom());
+        holder.getTextViewEmail().setText(student.getEmail());
+        holder.getTextViewGroupe().setText(student.getGroupe());
         Picasso.get().load(student.getAvatar()).into(holder.getAvatarViewStudent());
         holder.getLayoutCell().setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,13 +13,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
+public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.ViewHolder> {
     MainActivity activity;
-    ArrayList<Product> products;
+    ArrayList<Categorie> categories;
 
-    public ProductAdapter(MainActivity activity, ArrayList<Product> Products){
+    public CategorieAdapter(MainActivity activity, ArrayList<Categorie> categories){
         this.activity=activity;
-        this.products=products;
+        this.categories=categories;
     }
 
     /**
@@ -27,23 +27,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
      * (custom ViewHolder).
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textViewName;
+        private final TextView textViewCategorie_id;
         private final TextView textViewDescription;
         private final ImageView imageViewPicture;
-        private final View layoutCellProduct;
+        private final View layoutCellCategorie;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
 
-            textViewName = view.findViewById(R.id.textViewName);
+            textViewCategorie_id = view.findViewById(R.id.textViewCategorie_id);
             textViewDescription = view.findViewById(R.id.textViewDescription);
             imageViewPicture = view.findViewById(R.id.imageViewPicture);
-            layoutCellProduct = view.findViewById(R.id.layoutCellProduct);
+            layoutCellCategorie = view.findViewById(R.id.layoutCellCategorie);
         }
 
-        public TextView getTextViewName() {
-            return textViewName;
+        public TextView getTextViewCategorie_id() {
+            return textViewCategorie_id;
         }
         public TextView getTextViewDescription() {
             return textViewDescription;
@@ -51,8 +51,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public ImageView getImageViewPicture() {
             return imageViewPicture;
         }
-        public View getLayoutCellProduct() {
-            return layoutCellProduct;
+        public View getLayoutCellCategorie() {
+            return layoutCellCategorie;
         }
     }
 
@@ -61,27 +61,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.cell_products, viewGroup, false);
+                .inflate(R.layout.cell_categories, viewGroup, false);
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Product product=products.get(position);
-        holder.getTextViewName().setText(product.getName());
-        holder.getTextViewDescription().setText(product.getdescription());
-        Picasso.get().load(product.getPicture_url()).into(holder.getImageViewPicture());
-        holder.getLayoutCellProduct().setOnClickListener(new View.OnClickListener() {
+        final Categorie categorie=categories.get(position);
+        holder.getTextViewCategorie_id().setText(categorie.getCategorie_id());
+        holder.getTextViewDescription().setText(categorie.getTitle());
+        Picasso.get().load(categorie.getProducts_url()).into(holder.getImageViewPicture());
+        holder.getLayoutCellCategorie().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageActivity.displayActivity(activity,product.getPicture_url(),product.getName());
+                ImageActivity.displayActivity(activity,categorie.getProducts_url(),categorie.getCategorie_id());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return categories.size();
     }
 }

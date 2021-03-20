@@ -2,19 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:background="@android:color/holo_blue_light">
+    android:background="@android:color/darker_gray">
     <LinearLayout
-        android:id="@+id/layoutCell"
+        android:id="@+id/layoutCellCategorie"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/avatarViewStudent"
-            android:layout_gravity="center_vertical"
-            android:layout_width="120dp"
-            android:scaleType="fitXY"
-            android:layout_height="120dp"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -22,38 +16,19 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textViewNom"
+                android:id="@+id/textViewCategorie_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:padding="10dp"
-                android:text="Nom"
+                android:text="Categorie_id"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
+
             <TextView
-                android:id="@+id/textViewPrenom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:padding="10dp"
-                android:text="Prenom"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/textViewEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:padding="10dp"
-                android:text="Email"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/textViewGroupe"
+                android:id="@+id/textViewProducts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

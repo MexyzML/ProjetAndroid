@@ -29,11 +29,12 @@ public class GroupActivity extends MainActivity {
         setContentView(R.layout.activity_group);
         setTitle("Infos");
         showBack();
+        students = new ArrayList<>();
         RecyclerView recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        StudentAdapter studentAdapter=new StudentAdapter(this,students);
+        recyclerView.setAdapter(studentAdapter);
 
-
-        students = new ArrayList<>();
         try {
 
             JSONObject jsonObject=new JSONObject(Data.allData);
@@ -42,8 +43,7 @@ public class GroupActivity extends MainActivity {
                 Student student=new Student(jsonItems.getJSONObject(i));
                 students.add(student);
             }
-            StudentAdapter studentAdapter=new StudentAdapter(this,students);
-            recyclerView.setAdapter(studentAdapter);
+
 
         } catch (JSONException e) {
             e.printStackTrace();
