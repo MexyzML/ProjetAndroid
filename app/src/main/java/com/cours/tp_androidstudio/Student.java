@@ -7,13 +7,14 @@ public class Student {
     private String prenom;
     private String email;
     private String avatar;
+    private String groupe;
 
     public Student(JSONObject o){
-        nom=o.optString("nom","");
-        prenom=o.optString("prenom","");
-        email=o.optString("email","");
-        avatar=o.optString("avatar","");
-
+        nom = o.optString("nom","");
+        prenom = o.optString("prenom","");
+        email = o.optString("email","");
+        avatar = o.optString("avatar","");
+        groupe = o.optString("groupe","");
     }
     public String getAvatar() {
         return avatar;
@@ -45,7 +46,11 @@ public class Student {
         this.email = email;
     }
 
+    public String getGroupe() {
+        return groupe;
+    }
 
+    public void setGroupe(String groupe) {  this.groupe = groupe; }
 
 
 }
