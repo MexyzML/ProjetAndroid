@@ -18,6 +18,7 @@
         <activity android:name=".GroupActivity"></activity>
         <activity android:name=".ImageActivity" />
         <activity android:name=".ProductsActivity"/>
+        <activity android:name=".ProductPageActivity"/>
         <activity android:name=".CategorieActivity"/>
 
         <activity android:name=".SplashActivity">

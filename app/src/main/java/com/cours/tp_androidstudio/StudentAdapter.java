@@ -14,8 +14,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
-    private MainActivity activity;
-    private ArrayList<Student> students;
+    MainActivity activity;
+    ArrayList<Student> students;
 
 
     public StudentAdapter(MainActivity activity, ArrayList<Student> students){
@@ -58,7 +58,6 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.cell_student, viewGroup, false);
         return new ViewHolder(view);
@@ -75,7 +74,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         holder.getLayoutCell().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               ImageActivity.displayActivity(activity,student.getAvatar(),student.getNom());
+               ImageActivity.displayActivity(activity,student.getAvatar(),student.getNom(),student.getPrenom(),student.getEmail(), student.getGroupe());
             }
         });
     }

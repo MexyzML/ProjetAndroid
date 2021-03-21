@@ -21,14 +21,13 @@ public class CategorieActivity extends MainActivity  {
         Intent intent = new Intent(activity, CategorieActivity.class);
         activity.startActivity(intent);
     }
-    private ArrayList<Categorie> categories;
+    ArrayList<Categorie> categories =new ArrayList<>();;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorie);
         setTitle("Categories");
         showBack();
-        categories=new ArrayList<>();
         RecyclerView recyclerView=findViewById(R.id.recyclerViewCategories);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         CategorieAdapter categorieAdapter=new CategorieAdapter(this,categories);

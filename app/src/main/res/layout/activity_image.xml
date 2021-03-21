@@ -12,9 +12,38 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_height="300dp"
+        android:adjustViewBounds="true"/>
+    <TextView
+        android:id="@+id/prenom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"/>
+        android:layout_marginTop="400dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prenom"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/groupe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
 
 </RelativeLayout>

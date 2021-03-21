@@ -15,17 +15,14 @@ import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
     MainActivity activity;
-    ArrayList<Product> products;
+    ArrayList<Product> products ;
 
     public ProductAdapter(MainActivity activity, ArrayList<Product> Products){
         this.activity=activity;
         this.products=products;
     }
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewName;
         private final TextView textViewDescription;
@@ -75,7 +72,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.getLayoutCellProduct().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageActivity.displayActivity(activity,product.getPicture_url(),product.getName());
+                ProductPageActivity.displayActivity(activity,product.getPicture_url(),product.getName(), product.getdescription());
             }
         });
     }

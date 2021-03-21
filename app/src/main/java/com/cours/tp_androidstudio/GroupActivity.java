@@ -22,14 +22,14 @@ public class GroupActivity extends MainActivity {
         Intent intent = new Intent(activity, GroupActivity.class);
         activity.startActivity(intent);
     }
-    private ArrayList<Student> students;
+    ArrayList<Student> students  = new ArrayList<>();;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
         setTitle("Infos");
         showBack();
-        students = new ArrayList<>();
+        //students = new ArrayList<>();
         RecyclerView recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         StudentAdapter studentAdapter=new StudentAdapter(this,students);

@@ -17,21 +17,15 @@ import java.util.ArrayList;
 
 public class ProductsActivity extends MainActivity {
 
-    ArrayList<Product> products;
-    ProductAdapter productAdapter;
-    RecyclerView recyclerView;
+     ArrayList<Product>  products=new ArrayList<>();;
 
-    public static void displayActivity(HomeActivity activity) {
-        Intent intent = new Intent(activity, ProductsActivity.class);
-        activity.startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         setTitle("Products List");
-        products=new ArrayList<>();
+
         RecyclerView recyclerView=findViewById(R.id.recyclerViewProducts);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ProductAdapter productAdapter=new ProductAdapter(this,products);
@@ -48,7 +42,7 @@ public class ProductsActivity extends MainActivity {
                         Product product=new Product(jsonArray.getJSONObject(i));
                         products.add(product);
                     }
-                 //   productAdapter.notifyDataSetChanged();
+                    productAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -62,6 +56,7 @@ public class ProductsActivity extends MainActivity {
         });
         wsCall.run();
     }
+
 }
 
 

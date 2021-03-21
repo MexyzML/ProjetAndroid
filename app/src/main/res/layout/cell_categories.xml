@@ -28,12 +28,22 @@
 
 
             <TextView
-                android:id="@+id/textViewProducts"
+                android:id="@+id/textViewProductUrl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:padding="10dp"
-                android:text="groupe"
+                android:text="Products"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Products"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

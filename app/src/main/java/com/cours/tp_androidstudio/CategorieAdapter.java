@@ -1,5 +1,6 @@
 package com.cours.tp_androidstudio;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +29,8 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.View
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewCategorie_id;
-        private final TextView textViewDescription;
-        private final ImageView imageViewPicture;
+        private final TextView textViewTitle;
+        private final TextView textViewProductUrl;
         private final View layoutCellCategorie;
 
         public ViewHolder(View view) {
@@ -37,20 +38,18 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.View
             // Define click listener for the ViewHolder's View
 
             textViewCategorie_id = view.findViewById(R.id.textViewCategorie_id);
-            textViewDescription = view.findViewById(R.id.textViewDescription);
-            imageViewPicture = view.findViewById(R.id.imageViewPicture);
+            textViewTitle= view.findViewById(R.id.textViewTitle);
+            textViewProductUrl = view.findViewById(R.id.textViewProductUrl);
             layoutCellCategorie = view.findViewById(R.id.layoutCellCategorie);
         }
 
         public TextView getTextViewCategorie_id() {
             return textViewCategorie_id;
         }
-        public TextView getTextViewDescription() {
-            return textViewDescription;
+        public TextView getTextViewTitle() {
+            return textViewTitle;
         }
-        public ImageView getImageViewPicture() {
-            return imageViewPicture;
-        }
+        public TextView getTextProduct_url() { return textViewProductUrl; }
         public View getLayoutCellCategorie() {
             return layoutCellCategorie;
         }
@@ -70,12 +69,13 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Categorie categorie=categories.get(position);
         holder.getTextViewCategorie_id().setText(categorie.getCategorie_id());
-        holder.getTextViewDescription().setText(categorie.getTitle());
-        Picasso.get().load(categorie.getProducts_url()).into(holder.getImageViewPicture());
+        holder.getTextViewTitle().setText(categorie.getTitle());
+        holder.getTextProduct_url().setText(categorie.getProducts_url());
         holder.getLayoutCellCategorie().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageActivity.displayActivity(activity,categorie.getProducts_url(),categorie.getCategorie_id());
+                Intent intent = new Intent(v.getContext(), ProductsActivity.class);
+                v.getContext().startActivity(intent);
             }
         });
     }
