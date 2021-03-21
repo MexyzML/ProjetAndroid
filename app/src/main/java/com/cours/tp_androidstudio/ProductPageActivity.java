@@ -30,6 +30,7 @@ public class ProductPageActivity extends MainActivity {
         setTitle(nom);
         showBack();
         TextView textView = findViewById(R.id.description);
+        textView.setText(description);
         ImageView imageView = findViewById(R.id.picture_url);
         Picasso.get().load(picture).into(imageView);
 

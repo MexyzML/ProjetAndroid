@@ -75,6 +75,8 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieAdapter.View
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ProductsActivity.class);
+                String url = categorie.getProducts_url();
+                intent.putExtra("products_url", url);
                 v.getContext().startActivity(intent);
             }
         });

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class ProductsActivity extends MainActivity {
 
-     ArrayList<Product>  products=new ArrayList<>();;
+     ArrayList<Product> products=new ArrayList<>();;
 
 
     @Override
@@ -25,13 +25,14 @@ public class ProductsActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         setTitle("Products List");
-
+        showBack();
         RecyclerView recyclerView=findViewById(R.id.recyclerViewProducts);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ProductAdapter productAdapter=new ProductAdapter(this,products);
         recyclerView.setAdapter(productAdapter);
 
-        String url = "http://djemam.com/epsi/categories.json";
+
+        String url = getIntent().getExtras().getString("products_url","");
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result){
